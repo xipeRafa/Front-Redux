@@ -38,7 +38,7 @@ export const useUsers = () => {
     
 
 
-      
+
 
 
   const dataUsersGet = async (from=0, limit=8) => {
@@ -46,38 +46,41 @@ export const useUsers = () => {
       try { 
           // const { data } = await axiosApi.get(`/usuarios/${from}/${limit}`)
           // //console.log('dataUsers limit 8:', data)
-          let usersGet = 
-          [
-            {nombre:'juan0', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://plus.unsplash.com/premium_photo-1678233035759-89e0ab1062de?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8JTIwY2F0JUMzJUIzbGljYXxlbnwwfHwwfHx8MA%3D%3D' },
-            {nombre:'juan1', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://images.unsplash.com/photo-1506451778068-985b98c0de18?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8JTIwY2F0JUMzJUIzbGljYXxlbnwwfHwwfHx8MA%3D%3D' },
-            {nombre:'juan2', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://images.unsplash.com/photo-1528357136257-0c25517acfea?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8JTIwY2F0JUMzJUIzbGljYXxlbnwwfHwwfHx8MA%3D%3D' },
-            {nombre:'juan3', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://images.unsplash.com/photo-1594857373854-0314626c18e7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8JTIwY2F0JUMzJUIzbGljYXxlbnwwfHwwfHx8MA%3D%3D' },
-            {nombre:'juan4', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://images.unsplash.com/photo-1546718876-2d05e6e23046?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8JTIwY2F0JUMzJUIzbGljYXxlbnwwfHwwfHx8MA%3D%3D' },
-            {nombre:'juan5', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://images.unsplash.com/photo-1470859685138-71dd60ed39b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fCUyMGNhdCVDMyVCM2xpY2F8ZW58MHx8MHx8fDA%3D' },
-            {nombre:'juan6', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://plus.unsplash.com/premium_photo-1677959658600-bbb6fbcc6890?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8JTIwY2F0JUMzJUIzbGljYXxlbnwwfHwwfHx8MA%3D%3D' },
-            {nombre:'juan7', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://images.unsplash.com/photo-1531262549175-6ede6f8a91d2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fCUyMGNhdCVDMyVCM2xpY2F8ZW58MHx8MHx8fDA%3D' },
-            {nombre:'juan8', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://plus.unsplash.com/premium_photo-1678233035754-8ea508fb30b5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fCUyMGNhdCVDMyVCM2xpY2F8ZW58MHx8MHx8fDA%3D' },
-            {nombre:'juan9', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://images.unsplash.com/photo-1553906451-86e5710d388e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fCUyMGNhdCVDMyVCM2xpY2F8ZW58MHx8MHx8fDA%3D' },
-            {nombre:'juan10', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://images.unsplash.com/photo-1541657160149-b58d4e0d3c83?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fCUyMGNhdCVDMyVCM2xpY2F8ZW58MHx8MHx8fDA%3D' },
-            {nombre:'juan11', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://images.unsplash.com/photo-1586015530974-66bba8e530ae?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fCUyMGNhdCVDMyVCM2xpY2F8ZW58MHx8MHx8fDA%3D' }
-          ]
+            let usersGet = 
+            [
+              {nombre:'juan0', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://plus.unsplash.com/premium_photo-1678233035759-89e0ab1062de?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8JTIwY2F0JUMzJUIzbGljYXxlbnwwfHwwfHx8MA%3D%3D' },
+              {nombre:'juan1', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://images.unsplash.com/photo-1506451778068-985b98c0de18?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8JTIwY2F0JUMzJUIzbGljYXxlbnwwfHwwfHx8MA%3D%3D' },
+              {nombre:'juan2', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://images.unsplash.com/photo-1528357136257-0c25517acfea?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8JTIwY2F0JUMzJUIzbGljYXxlbnwwfHwwfHx8MA%3D%3D' },
+              {nombre:'juan3', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://images.unsplash.com/photo-1594857373854-0314626c18e7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8JTIwY2F0JUMzJUIzbGljYXxlbnwwfHwwfHx8MA%3D%3D' },
+              {nombre:'juan4', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://images.unsplash.com/photo-1546718876-2d05e6e23046?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8JTIwY2F0JUMzJUIzbGljYXxlbnwwfHwwfHx8MA%3D%3D' },
+              {nombre:'juan5', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://images.unsplash.com/photo-1470859685138-71dd60ed39b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fCUyMGNhdCVDMyVCM2xpY2F8ZW58MHx8MHx8fDA%3D' },
+              {nombre:'juan6', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://plus.unsplash.com/premium_photo-1677959658600-bbb6fbcc6890?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8JTIwY2F0JUMzJUIzbGljYXxlbnwwfHwwfHx8MA%3D%3D' },
+              {nombre:'juan7', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://images.unsplash.com/photo-1531262549175-6ede6f8a91d2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fCUyMGNhdCVDMyVCM2xpY2F8ZW58MHx8MHx8fDA%3D' },
+              {nombre:'juan8', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://plus.unsplash.com/premium_photo-1678233035754-8ea508fb30b5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fCUyMGNhdCVDMyVCM2xpY2F8ZW58MHx8MHx8fDA%3D' },
+              {nombre:'juan9', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://images.unsplash.com/photo-1553906451-86e5710d388e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fCUyMGNhdCVDMyVCM2xpY2F8ZW58MHx8MHx8fDA%3D' },
+              {nombre:'juan10', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://images.unsplash.com/photo-1541657160149-b58d4e0d3c83?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fCUyMGNhdCVDMyVCM2xpY2F8ZW58MHx8MHx8fDA%3D' },
+              {nombre:'juan11', correo:'juan@gmail.com', rol:'user', uid:123456, estado:true, google:false, toggle:false, img:'https://images.unsplash.com/photo-1586015530974-66bba8e530ae?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fCUyMGNhdCVDMyVCM2xpY2F8ZW58MHx8MHx8fDA%3D' }
+            ]
 
-           dispatch(usersDataPush(usersGet))
-          // //console.log('typeof Data', data)
+           
+            // //console.log('typeof Data', data)
 
-          // const alls = await axiosApi.get(`/usuarios/0/${data.total}`)
+            // const alls = await axiosApi.get(`/usuarios/0/${data.total}`)
 
-          //  localStorage.UsersArray = JSON.stringify([...alls.data.usuarios, ...fallUsersArr])  
+            //  localStorage.UsersArray = JSON.stringify([...alls.data.usuarios, ...fallUsersArr])  
 
             if(localStorage.UsersArray == undefined){
                 localStorage.UsersArray = JSON.stringify(usersGet)
+                dispatch(usersDataPush(usersGet))
             }
               
-              localStorage.UsersTotal = JSON.stringify(JSON.parse(localStorage.UsersArray).length)
-              localStorage.step = '8'
-          // localStorage.UsersTotal = data.total  
-         dispatch(usersDataPush({usuarios:JSON.parse(localStorage.UsersArray)}))
-          // paginationSelect(8)
+            localStorage.UsersTotal = JSON.stringify(JSON.parse(localStorage.UsersArray).length)
+            localStorage.step = '8'
+        
+            dispatch(usersDataPush({usuarios:JSON.parse(localStorage.UsersArray)}))
+
+            // localStorage.UsersTotal = data.total  
+            // paginationSelect(8)
       
       } catch (error) {
           dispatch(usersDataPush({usuarios: usersLSArr})) 
@@ -337,17 +340,17 @@ export const useUsers = () => {
 
 
   const paginationSelect=(v:Number)=>{
-      // const { arr } = paginationExplorer(v)
-      // dispatch(usersDataPush({usuarios: arr }) ) 
+      const { arr } = paginationExplorer(v)
+      dispatch(usersDataPush({usuarios: arr }) ) 
       /*  dataUsersGet(v -8, v) */ 
   }
 
 
   const paginationNext =(boo:Boolean, n=8)=>{
-      // const { arr } = nextExplorer(boo, n)
-      // dispatch(usersDataPush({usuarios: arr }) )
+      const { arr } = nextExplorer(boo, n)
+      dispatch(usersDataPush({usuarios: arr }) )
       // let step = localStorage.step
-      /*  dataUsersGet(step -n, step) */
+      // dataUsersGet(step -n, step) 
   }
 
 

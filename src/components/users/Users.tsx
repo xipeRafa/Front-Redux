@@ -57,21 +57,28 @@ console.log(users)
 
             <div className='mx-5 my-2'>
 
-                <div>{`Usuarios del: ${localStorage.step-(localStorage.step-1)} para ${localStorage.step}, en Total: ${localStorage.UsersTotal}`}</div>
+                <div>{`Usuarios del: ${localStorage.step-7} para ${localStorage.step}, en Total: ${JSON.parse(localStorage.UsersArray).length}`}</div>
 
                 <input type="button" value='Previous' onClick={()=>paginationNext(false)} className='btn btn-secondary'/>
 
+
+
+
                 {JSON.parse(localStorage.UsersArray)?.map((el, i) => (
-                    i < localStorage.UsersTotal/localStorage.step &&
-                        <input key={i+'<^>'} type="button" value={i+1} onClick={()=>handlePaginationSelect((i+1)*localStorage.step)} className='btn btn-secondary'/> 
+                    i < localStorage.UsersTotal/8 &&
+                        <input key={i+'<^>'} type="button" value={i+1} onClick={()=>handlePaginationSelect((i+1)*8)} className='btn btn-secondary'/> 
                 ))}
            
+
+
                 <input type="button" value='Next' onClick={()=>paginationNext(true)} className='btn btn-secondary'/>
+
+
 
                 <select className='form-select col-12 my-2' style={{width:'200px'}} onChange={(e)=>handlePaginationSelect(e.target.value)}>
                     {JSON.parse(localStorage.UsersArray)?.map((el, i) => (
-                        i < localStorage.UsersTotal/localStorage.step && 
-                            <option key={i} value={(i+1)*localStorage.step}>   {`${((i+1)*localStorage.step)-(localStorage.step-1)} a ${(i+1)*localStorage.step}`}   </option>
+                        i < localStorage.UsersTotal/8 && 
+                            <option key={i} value={(i+1)*8}>   {`${(i+1)*8-7} a ${(i+1)*8}`}   </option>
                     ))}
                 </select>
             </div>
@@ -94,7 +101,7 @@ console.log(users)
 
             {users.usuarios?.length < 3 &&  
                 <div className='mx-5 my-4'>
-                    <button onClick={()=>handlePaginationSelect(localStorage.step)} className='btn btn-info'> Click para Ver todos los Usuarios</button>
+                    <button onClick={()=>handlePaginationSelect(8)} className='btn btn-info'> Click para Ver todos los Usuarios</button>
                 </div>
             }
  
