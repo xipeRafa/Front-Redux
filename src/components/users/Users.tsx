@@ -21,7 +21,7 @@ export const Users = () => {
             paginationSelect, paginationNext } = useUsers()
 
 
-console.log(users)
+console.log(editMode)
 
     useEffect(() => {
         dataUsersGet()
@@ -37,6 +37,7 @@ console.log(users)
     }
 
     const handleEdith = (el: String) => {
+        console.log(el)
         setInfoToForm(el)
     }
 
@@ -125,7 +126,7 @@ console.log(users)
                     <button onClick={() => handleDelete(el)}>Eliminar</button>
                     <button onClick={() => handleSwitch(el)}>Toggle</button>
                     <button onClick={() => handleEdith(el)}>Edit</button>
-                    
+
                     <input type="file" id="file-upload" onChange={(e) => uploadUserImg(el.uid, e.target.files[0])} />
 
                 </div>

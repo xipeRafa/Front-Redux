@@ -234,7 +234,7 @@ export const useUsers = () => {
 
           let curretUsers = JSON.parse(localStorage.UsersArray)
 
-          let editedUsers = curretUsers.map((el) => (el.uid === uid ? {nombre, correo, uid} : el))
+          let editedUsers = curretUsers.map((el) => (el.uid === uid ? {...editMode, nombre, correo} : el))
          
           localStorage.UsersArray = JSON.stringify(editedUsers)
 
@@ -327,6 +327,8 @@ export const useUsers = () => {
 
 
   const uploadUserImg = async(uid, file) => {
+
+    console.log(file)
       try {
           // const { data } = await axiosApi.put(`/uploads/usuarios/${uid}`, {file},{
           // headers: {
@@ -353,19 +355,19 @@ export const useUsers = () => {
 
   const usersFinder = async (v:String) => {
       try {
-          // if(v.length > 3){
-          //     const { upFirstLe, upperCase, lowerCase, emailFind } = finderExplorer(v)
+           if(v.length > 3){
+               const { upFirstLe, upperCase, lowerCase, emailFind } = finderExplorer(v)
 
-          //     upFirstLe.length>=1 ? dispatch(usersDataPush({usuarios:upFirstLe})): null
-          //     upperCase.length>=1 ? dispatch(usersDataPush({usuarios:upperCase})): null
-          //     lowerCase.length>=1 ? dispatch(usersDataPush({usuarios:lowerCase})): null
-          //     emailFind.length>=1 ? dispatch(usersDataPush({usuarios:emailFind})): null
+               // upFirstLe.length>=1 ? dispatch(usersDataPush({usuarios:upFirstLe})): null
+               // upperCase.length>=1 ? dispatch(usersDataPush({usuarios:upperCase})): null
+               // lowerCase.length>=1 ? dispatch(usersDataPush({usuarios:lowerCase})): null
+               // emailFind.length>=1 ? dispatch(usersDataPush({usuarios:emailFind})): null
               
-          //     console.log({ upFirstLe,upperCase,lowerCase,emailFind })
+               dispatch(usersDataPush( {usuarios:[...upFirstLe, ...upperCase, ...lowerCase, ...emailFind]} ))
               
               /*const {data} = await axiosApi.get(`/buscar/usuarios/${v}`) 
               dispatch(usersDataPush({usuarios:data.results}))  */ 
-          //} 
+          } 
       } catch (error) {
           console.log('usersFinder error :>>', error)
           SweetAlertError(error)
