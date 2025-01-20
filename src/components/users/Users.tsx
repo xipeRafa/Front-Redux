@@ -116,8 +116,8 @@ console.log(users)
                     <p>Role:   {el.rol}</p>
                     <p>id:     {el.uid}</p>
 
-                    <p>State:  {el.estado ? ' true' : ' false'}</p>
-                    <p>Google: {el.google ? ' true' : ' false'}</p>
+                {/*    <p>State:  {el.estado ? ' true' : ' false'}</p>
+                    <p>Google: {el.google ? ' true' : ' false'}</p>*/}
 
                     <img src={el.img} width='100px' />
                     <p>Toggle: {el.toggle ? ' True' : ' False'} </p>

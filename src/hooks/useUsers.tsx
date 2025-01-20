@@ -117,7 +117,7 @@ export const useUsers = () => {
           let curretUsers = JSON.parse(localStorage.UsersArray)
           
 
-          curretUsers.push({ nombre, correo, password, uid:Date.now() })
+          curretUsers.push({ nombre, correo, password, uid:Date.now(), toggle:true, rol:'user' })
           localStorage.UsersArray = JSON.stringify(curretUsers)
           dispatch(usersDataPush({usuarios:JSON.parse(localStorage.UsersArray)}))
 
