@@ -21,7 +21,7 @@ export const Users = () => {
             paginationSelect, paginationNext } = useUsers()
 
 
-console.log(editMode)
+
 
     useEffect(() => {
         dataUsersGet()
@@ -46,6 +46,9 @@ console.log(editMode)
         let step = Number(ps)
         paginationSelect(step)
     }
+
+
+     
 
 
     return (
@@ -105,6 +108,13 @@ console.log(editMode)
                     <button onClick={()=>handlePaginationSelect(8)} className='btn btn-info'> Click para Ver todos los Usuarios</button>
                 </div>
             }
+
+
+
+
+
+
+      
  
 
 
@@ -121,6 +131,7 @@ console.log(editMode)
                     <p>Google: {el.google ? ' true' : ' false'}</p>*/}
 
                     <img src={el.img} width='100px' />
+
                     <p>Toggle: {el.toggle ? ' True' : ' False'} </p>
 
                     <button onClick={() => handleDelete(el)}>Eliminar</button>

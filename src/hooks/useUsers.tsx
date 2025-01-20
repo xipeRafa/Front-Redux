@@ -329,6 +329,7 @@ export const useUsers = () => {
   const uploadUserImg = async(uid, file) => {
 
     console.log(file)
+    localStorage.setItem("urlImgLSRedux", URL.createObjectURL(file));
       try {
           // const { data } = await axiosApi.put(`/uploads/usuarios/${uid}`, {file},{
           // headers: {

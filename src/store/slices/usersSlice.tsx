@@ -11,7 +11,6 @@ export const usersSlice = createSlice({
 
     reducers: {
         usersDataPush: (state, { payload }) => {
-            console.log(payload)
             state.users = payload;
         },
         editUserView:(state, {payload})=>{

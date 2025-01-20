@@ -28,6 +28,8 @@ export const useAuth = () => {
     }
 
 
+
+
     function defaultAlert(){
         setTimeout(() => {
             dispatch(clearAlertMessage())
@@ -64,9 +66,9 @@ export const useAuth = () => {
 
             if(isThere){
 
-                    let user = JSON.parse(localStorage.usersRegistered).filter((el) => el.password === password)
+                    let user = JSON.parse(localStorage.usersRegistered).filter((el) => el.correo === correo)
 
-                    if(user.length==1){
+                    if(user[0].password === password){
                             dispatch(onLogin({ nombre: user[0].nombre, uid: user[0].uid }));
                             localStorage.status = 'authenticated'
                             location.pathname = '/productos'
@@ -102,19 +104,17 @@ export const useAuth = () => {
 
 
             if(localStorage.usersRegistered == undefined){
-                    localStorage.userRegistered = JSON.stringify([])
+                    localStorage.usersRegistered = JSON.stringify([])
             }
 
             let usersLS = JSON.parse(localStorage.usersRegistered)
             usersLS.push({ nombre, correo, password, uid:Date.now() })
 
+
             localStorage.usersRegistered = JSON.stringify(usersLS)
 
             location.pathname = '/*'
-
-            // dispatch(onLogin({ nombre, uid: Date.now() }))
-
-            // location.pathname = '/productos'
+            
 
             try {
             
