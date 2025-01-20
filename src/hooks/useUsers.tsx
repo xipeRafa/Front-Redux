@@ -230,7 +230,21 @@ export const useUsers = () => {
 
 
   const newDataEdit = async (nombre, correo, uid) => { 
+
+
+          let curretUsers = JSON.parse(localStorage.UsersArray)
+
+          let editedUsers = curretUsers.map((el) => (el.uid === uid ? {nombre, correo, uid} : el))
+         
+          localStorage.UsersArray = JSON.stringify(editedUsers)
+
+          dispatch(usersDataPush({usuarios:JSON.parse(localStorage.UsersArray)}))
+
+          dispatch(defaultEditMode()) 
+
       try {
+
+
           // const { objTarget } = editExplorer(false, {uid}, fallUsersArr, usersLSArr, {nombre}, {correo})
           // dispatch( usersDataPush({usuarios:[objTarget]}))
         
@@ -245,7 +259,7 @@ export const useUsers = () => {
           //SweetAlertError(error)
           errorConsoleCatch(error)
       }
-      dispatch(defaultEditMode()) 
+      
   }
 
 
@@ -263,6 +277,7 @@ export const useUsers = () => {
           let del = curretUsers.filter((el) => el.uid !== usuario.uid)
           localStorage.UsersArray = JSON.stringify(del)
           dispatch(usersDataPush({usuarios:JSON.parse(localStorage.UsersArray)}))
+          dispatch(somethingWentRigth(['Usuario fue Borrado', usuario.correo + ' ya no existe ', 'success']))
 
       try {
           // const { usuarios } = deleteExplorer(usuario.uid, usersLSArr, fallUsersArr)
@@ -282,7 +297,15 @@ export const useUsers = () => {
 
 
   const switchUser = async (usuario) => {
-      // let uid = usuario.uid
+
+          let curretUsers = JSON.parse(localStorage.UsersArray)
+         
+          curretUsers.map((el) => (el.uid === usuario.uid ? (el.toggle = !el.toggle) : el))
+          localStorage.UsersArray = JSON.stringify(curretUsers)
+
+          dispatch(switchUserView({usuarios:JSON.parse(localStorage.UsersArray)}))
+          dispatch(somethingWentRigth(['Usuario switched', usuario.toggle + ' to ' + !usuario.toggle , 'success']))
+
       try {
           // const { objTarget } = toggleExplorer(false, {uid}, usuario, 'toggle', usersLSArr, fallUsersArr) 
           // dispatch(switchUserView({usuarios:[objTarget]})) 

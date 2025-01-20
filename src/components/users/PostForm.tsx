@@ -22,7 +22,8 @@ export const PostForm = ({postUser, editMode, newDataEdit, defaultModeEdith }) =
      useEffect(() => { 
         if(editMode !== undefined) {
             const { nombre, correo, } = editMode
-            setName2({nameUser:nombre, email:correo})}
+            setName2({nameUser:nombre, email:correo})
+        }
     }, [editMode]) 
 
 

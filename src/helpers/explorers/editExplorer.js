@@ -8,7 +8,7 @@
 
 
 export function editExplorer(saveInFall=false, objId, fallUsersArr, array){
-
+//const { objTarget } = editExplorer(false, {uid}, fallUsersArr, usersLSArr, {nombre}, {correo})
 
      const arrString = JSON.stringify(array)
      const newArray =  JSON.parse(arrString)
@@ -18,13 +18,13 @@ export function editExplorer(saveInFall=false, objId, fallUsersArr, array){
 
 
 
-     let indexTarget = newArray.findIndex((el) => el[keyId] === valueId)
+      let indexTarget = newArray.findIndex((el) => el[keyId] === valueId)
 
-     let objTarget = newArray.slice(indexTarget, indexTarget +1)[0]
+      let objTarget = newArray.slice(indexTarget, indexTarget +1)[0]
 
 
 
-     for (let index = 4; index < arguments.length; index++) {
+      for (let index = 4; index < arguments.length; index++) {
         let arg = arguments[index];
 
         let key = Object.keys(arg)[0]
@@ -32,7 +32,7 @@ export function editExplorer(saveInFall=false, objId, fallUsersArr, array){
         let value = Object.values(arg)[0]
 
         newArray.map(el => el[keyId] === valueId ? el[key] = value :el) 
-     } 
+      } 
 
 
       localStorage.UsersArray = JSON.stringify(newArray) //try
