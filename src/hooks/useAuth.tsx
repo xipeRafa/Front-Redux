@@ -73,11 +73,11 @@ export const useAuth = () => {
                             localStorage.status = 'authenticated'
                             location.pathname = '/productos'
                     }else{
-                            SweetAlertError()
+                            dispatch(somethingWentWrong(['Something Went Wrong', 'Contraseña Mal' || 'working', 'error']))
                     }       
   
             }else{
-                    SweetAlertError()
+                     dispatch(somethingWentWrong(['Something Went Wrong', 'Correo Mal' || 'working', 'error']))
             }
 
 
