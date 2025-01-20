@@ -26,7 +26,9 @@ export const useProductos = () => {
 
 
     const dataProductosGet = async () => {
-        localStorage.UsersArray = '[]'
+        // if(localStorage.UsersArray == undefined){
+        //     localStorage.UsersArray = '[]'
+        // }
         try{
             //const { data } = await axiosApi.get('/productos')
             //dispatch( productosDataPush(data) )
