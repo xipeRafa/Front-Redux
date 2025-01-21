@@ -16,7 +16,7 @@ import { Nav } from '../cmpsPartial';
 const AppRouter = () => {
 
 
-    const { status,  checkLogin,  startLogin, startRegister,startLogout, user, sweetAlertMessage, defaultAlert } = useAuth();
+    const { status,  checkLogin,  startLogin, startRegister, startLogout, user, sweetAlertMessage, defaultAlert } = useAuth();
 
 
 
@@ -46,7 +46,7 @@ const AppRouter = () => {
 
     return (
         <div>
-            <Nav startLogout={startLogout} user={user} status={status} />
+            <Nav startLogout={startLogout} user={user.nombre} status={status} />
             <Routes>
                 <Route path="/auth/login"    element={<Login  startLogin={startLogin}       status={status} />} />
                 <Route path="/auth/register" element={<SignUp startRegister={startRegister} status={status} />} />

@@ -38,7 +38,7 @@ export const PostForm = ({ postUser, editMode, newDataEdit, defaultModeEdith }) 
             postUser({nombre:nameUser, correo:email, password:password})
         }
 
-         onResetForm()
+        onResetForm()
     }
 
 
